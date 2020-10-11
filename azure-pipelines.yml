@@ -33,10 +33,10 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
-    artifactName: 'myWebsiteName'
+    artifactName: 'trabalhodevsecopswebapp'
 
 - task: AzureWebApp@1
   inputs:
-    azureSubscription: '<Azure service connection>'
-    appName: '<Name of web app>'
+    azureSubscription: '96198dd6-5a5f-4020-ab63-b1c5fcca7d0b'
+    appName: 'trabalhodevsecopswebapp'
     package: $(System.DefaultWorkingDirectory)/**/*.zip
