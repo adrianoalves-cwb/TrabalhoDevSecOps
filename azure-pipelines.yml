@@ -37,6 +37,6 @@ steps:
 
 - task: AzureWebApp@1
   inputs:
-    azureSubscription: '96198dd6-5a5f-4020-ab63-b1c5fcca7d0b'
+    azureSubscription: 'Visual Studio Professional Aboneliği (96198dd6-5a5f-4020-ab63-b1c5fcca7d0b)'
     appName: 'trabalhodevsecopswebapp'
     package: $(System.DefaultWorkingDirectory)/**/*.zip
