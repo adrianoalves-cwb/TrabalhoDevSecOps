@@ -39,8 +39,9 @@ steps:
   enabled: false
 
 
-  displayName: 'Degug parameters'
-  inputs:
+- download: none
+- task: DownloadPipelineArtifact@2
+  displayName: 'Download Build Artifacts'
     targetType: Inline
     script: |
       Write-Host "$(Build.ArtifactStagingDirectory)"
@@ -48,6 +49,10 @@ steps:
       Write-Host "$(System.ArtifactsDirectory)"
       Write-Host "$(Pipeline.Workspace)"
       Write-Host "$(System.ArtifactsDirectory)"
+  inputs:
+    patterns: '**/*.zip'
+    path: '$(Build.ArtifactStagingDirectory)'
+
 
 - task: PublishSymbols@2
   displayName: 'Publish symbols path'
