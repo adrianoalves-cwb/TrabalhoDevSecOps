@@ -38,6 +38,17 @@ steps:
     configuration: '$(BuildConfiguration)'
   enabled: false
 
+
+  displayName: 'Degug parameters'
+  inputs:
+    targetType: Inline
+    script: |
+      Write-Host "$(Build.ArtifactStagingDirectory)"
+      Write-Host "$(System.DefaultWorkingDirectory)"
+      Write-Host "$(System.ArtifactsDirectory)"
+      Write-Host "$(Pipeline.Workspace)"
+      Write-Host "$(System.ArtifactsDirectory)"
+
 - task: PublishSymbols@2
   displayName: 'Publish symbols path'
   inputs:
